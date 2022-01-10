@@ -11,16 +11,8 @@
 #include <sys/sem.h>
 #include <sys/shm.h>
 
+#include <errno.h>
+#include <fcntl.h>
+
 #define SEM_KEY 24602
 #define SHM_KEY 24603
-
-union semun {
-  int val;                  //used for SETVAL
-  struct semid_ds *buf;     //used for IPC_STAT and IPC_SET
-  unsigned short  *array;   //used for SETALL
-  struct seminfo  *__buf;
-};
-
-void create();
-void remo();
-//void remove();
